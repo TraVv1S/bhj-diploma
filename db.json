@@ -43,6 +43,11 @@
       "name": "acc3",
       "user_id": "166m43hysl9el0y4m",
       "id": "166m43h3cl9elo9vy"
+    },
+    {
+      "name": "Pavel",
+      "user_id": "1",
+      "id": "166m43gd4l9epy152"
     }
   ],
   "transactions": [
@@ -180,6 +185,15 @@
       "sum": 300000,
       "type": "expense",
       "user_id": "1"
+    },
+    {
+      "id": "166m43gd4l9epy8vl",
+      "type": "expense",
+      "name": "a",
+      "sum": 333,
+      "account_id": "166m43gd4l9epy152",
+      "user_id": "1",
+      "created_at": "2022-10-18T21:30:01.713Z"
     }
   ]
 }

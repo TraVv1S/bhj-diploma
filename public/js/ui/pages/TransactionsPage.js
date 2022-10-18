@@ -32,6 +32,14 @@ class TransactionsPage {
     this.element.querySelector('.remove-account').onclick = e => {
       this.removeAccount();
     }
+
+    this.element.querySelector('section.content').onclick = e => {
+      e.preventDefault();
+      const button = e.target.closest('button.transaction__remove');
+      if (button) {
+        this.removeTransaction(button.dataset.id);
+      }
+    }
   }
 
   /**
@@ -48,13 +56,15 @@ class TransactionsPage {
       return;
     }
 
-    Account.remove({ id: this.lastOptions.account_id }, (err, resp) => {
-      if (resp && resp.success) {
-        App.updateWidgets();
-        App.updateForms();
-        this.clear();
-      }
-    })
+    if(confirm('Удалить транзакцию?')) {
+      Account.remove({ id: this.lastOptions.account_id }, (err, resp) => {
+        if (resp && resp.success) {
+          App.updateWidgets();
+          App.updateForms();
+          this.clear();
+        }
+      })
+    }
   }
 
   /**
@@ -64,7 +74,13 @@ class TransactionsPage {
    * либо обновляйте текущую страницу (метод update) и виджет со счетами
    * */
   removeTransaction( id ) {
-
+    if(confirm('Удалить транзакцию?')) {
+      Transaction.remove({id}, (err,resp) => {
+        if(resp && resp.success) {
+          App.update();
+        }
+      })
+    }
   }
 
   /**
