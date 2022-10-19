@@ -33,8 +33,12 @@ const createRequest = (options = {}) => {
     
             options.callback(err,resp);
         };
+
+        xhr.onerror = function () {
+            throw new Error('Ошибка получения данных');
+        }
     }
-    
+
     try {
         xhr.open(options.method, url);
         xhr.send(formData);
