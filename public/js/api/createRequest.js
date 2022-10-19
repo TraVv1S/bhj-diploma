@@ -21,30 +21,25 @@ const createRequest = (options = {}) => {
     
     if (options.callback) {
 
-        xhr.onreadystatechange = function() {
+        xhr.onload = function() {
             let err = null;
             let resp = null;
             
-            try {
-                if (xhr.response && xhr.response.success) {
-                    resp = xhr.response;
-                } else {
-                    err = xhr.response;
-                }
-            }
-            catch (e) {
-                err = e;
+            if (xhr.response && xhr.response.success) {
+                resp = xhr.response;
+            } else {
+                err = xhr.response;
             }
     
             options.callback(err,resp);
-
-            // if (xhr.readyState === xhr.DONE && xhr.status === 200) {
-            //     let responce = JSON.parse(xhr.responseText);
-            //     render(responce);
-            // };
         };
     }
     
-    xhr.open(options.method, url);
-    xhr.send(formData);
+    try {
+        xhr.open(options.method, url);
+        xhr.send(formData);
+    } catch (e) {
+        callback(e);
+    }
+    
 };

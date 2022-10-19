@@ -11,6 +11,12 @@
       "email": "dan@dan",
       "password": "dan",
       "id": "166m43hysl9el0y4m"
+    },
+    {
+      "name": "Pavel",
+      "email": "a@a",
+      "password": "aaa",
+      "id": "166m43hzgl9fczzuw"
     }
   ],
   "accounts": [
@@ -35,19 +41,29 @@
       "id": "166m43h3cl9elnwy3"
     },
     {
-      "name": "acc2",
-      "user_id": "166m43hysl9el0y4m",
-      "id": "166m43h3cl9elo3hl"
-    },
-    {
-      "name": "acc3",
-      "user_id": "166m43hysl9el0y4m",
-      "id": "166m43h3cl9elo9vy"
-    },
-    {
-      "name": "Pavel",
+      "name": "eee",
       "user_id": "1",
-      "id": "166m43gd4l9epy152"
+      "id": "166m43l9wl9fbcws5"
+    },
+    {
+      "name": "aaa",
+      "user_id": "166m43hzgl9fczzuw",
+      "id": "166m43hzgl9fd06ge"
+    },
+    {
+      "name": "dadad",
+      "user_id": "166m43hysl9el0y4m",
+      "id": "166m43ltsl9fdd9r3"
+    },
+    {
+      "name": "asd",
+      "user_id": "166m43hysl9el0y4m",
+      "id": "166m43ltsl9fddzph"
+    },
+    {
+      "name": "sdf",
+      "user_id": "166m43hysl9el0y4m",
+      "id": "166m43dq8l9fdholj"
     }
   ],
   "transactions": [
@@ -187,13 +203,40 @@
       "user_id": "1"
     },
     {
-      "id": "166m43gd4l9epy8vl",
+      "id": "166m43hzgl9fd0pxu",
+      "type": "income",
+      "name": "Pavel2",
+      "sum": 666,
+      "account_id": "166m43hzgl9fd06ge",
+      "user_id": "166m43hzgl9fczzuw",
+      "created_at": "2022-10-19T08:15:48.306Z"
+    },
+    {
+      "id": "166m43h9ol9fd6qix",
+      "type": "income",
+      "name": "Danila",
+      "sum": 100,
+      "account_id": "166m43h3cl9elnwy3",
+      "user_id": "166m43hysl9el0y4m",
+      "created_at": "2022-10-19T08:20:29.000Z"
+    },
+    {
+      "id": "166m43h9ol9fd73b4",
       "type": "expense",
-      "name": "a",
+      "name": "Danila",
+      "sum": 50,
+      "account_id": "166m43h3cl9elnwy3",
+      "user_id": "166m43hysl9el0y4m",
+      "created_at": "2022-10-19T08:20:45.568Z"
+    },
+    {
+      "id": "166m43ltsl9fdeuw9",
+      "type": "expense",
+      "name": "Danila",
       "sum": 333,
-      "account_id": "166m43gd4l9epy152",
-      "user_id": "1",
-      "created_at": "2022-10-18T21:30:01.713Z"
+      "account_id": "166m43ltsl9fdd9r3",
+      "user_id": "166m43hysl9el0y4m",
+      "created_at": "2022-10-19T08:26:47.913Z"
     }
   ]
 }

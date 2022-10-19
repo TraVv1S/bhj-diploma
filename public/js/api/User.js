@@ -31,9 +31,7 @@ class User {
 
 
   static current() {
-    if (localStorage.user) {
-      return JSON.parse(localStorage.user)
-    }
+    return JSON.parse(localStorage.getItem('user'));
   }
   
 

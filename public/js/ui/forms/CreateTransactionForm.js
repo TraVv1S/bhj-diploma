@@ -23,10 +23,13 @@ class CreateTransactionForm extends AsyncForm {
 
     Account.list(null, (err, resp) => {
       if (resp) {
-        resp.data.forEach(i => list.insertAdjacentHTML (
-          'beforeend',
-          `<option value="${i.id}">${i.name}</option>`
-        ));
+        let resultHTML = '';
+
+        resp.data.forEach(item => {
+          resultHTML += `<option value="${item.id}">${item.name}</option>`;
+        });
+
+        list.innerHTML = resultHTML;
       }
     });
   }
@@ -42,9 +45,8 @@ class CreateTransactionForm extends AsyncForm {
     Transaction.create(data, (err, resp) => {
       if (resp && resp.success) {
         this.element.reset();
-        new Modal(this.element.closest('.modal')).close();
-        App.modals[typeModal].close();
         App.update();
+        App.getModal(typeModal).close();
       }
     })
   }
